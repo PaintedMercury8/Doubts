@@ -22,7 +22,7 @@ GET http://localhost:3000/todos/?category=HOME
 GET http://localhost:3000/todos/?category=LEARNING&priority=HIGH
 ###
 //Api 2//
-GET http://localhost:3000/todos/10/
+GET http://localhost:3000/todos/15/
 ###
 //Api 3//
 GET http://localhost:3000/agenda/?date=2021-02-22
@@ -32,7 +32,7 @@ POST http://localhost:3000/todos/
 Content-Type: application/json
 
 {
- "id": 13,
+ "id": 15,
  "todo": "Finalize event theme",
  "priority": "LOW",
  "status": "TO DO",

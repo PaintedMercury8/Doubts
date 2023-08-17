@@ -218,6 +218,7 @@ app.get("/agenda/", validateDate, async (request, response) => {
 //Api 4//
 app.post("/todos/", validateData, async (request, response) => {
   const { id, todo, priority, status, category, dueDate } = request.body;
+  const newDate = format(new Date(dueDate), "yyyy-MM-dd");
   const postQuery = `INSERT INTO todo (id,todo,priority,status,category,due_date)
   VALUES(
       ${id},
@@ -225,7 +226,7 @@ app.post("/todos/", validateData, async (request, response) => {
       '${priority}',
       '${status}',
       '${category}',
-      '${dueDate}'
+      '${newDate}'
   );`;
   const result = await db.run(postQuery);
   response.send("Todo Successfully Added");
